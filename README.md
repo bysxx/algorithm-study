@@ -1,9 +1,7 @@
-# CPPPractice
-
-![220px-ISO_C++_Logo svg](https://user-images.githubusercontent.com/91772497/146664639-8739fae3-47b2-4394-9805-a3c01c1058cb.png)
+# :orange_book: algorithm-study
 
 ### Users
-1. [Baek](https://github.com/BokJaeSang)
+1. [Baek](https://github.com/bysxx)
 2. [Moon](https://github.com/kangryunm)
 
 ### Rules
