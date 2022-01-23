@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 // https://www.acmicpc.net/problem/10814
-// Sorting_3 [01/19]
+// Sorting_2 [01/23]
 
 
 #include <iostream>
