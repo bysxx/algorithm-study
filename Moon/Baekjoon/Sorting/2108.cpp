@@ -1,13 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS
 // https://www.acmicpc.net/problem/2108
-// Sorting_4 [01/19]
+// Sorting_3 [01/23]
 
 /* 
-*  [Count Sort (°è¼ö Á¤·Ä)]
-*  Æ¯Á¤ÇÑ Á¶°Ç¿¡¼­ µ¥ÀÌÅÍ °³¼ö°¡ N, ÃÖ´ñ°ªÀÌ KÀÏ ¶§ O(N+K)·Î ºñ±³Àû ÀÛÀº ½Ã°£º¹Àâµµ¸¦ º¸ÀåÇÑ´Ù.
-*  "µ¥ÀÌÅÍÀÇ Å©±â ¹üÀ§°¡ Á¦ÇÑµÇ¾î Á¤¼ö ÇüÅÂ·Î Ç¥ÇöÇÒ ¼ö ÀÖÀ» ¶§"¸¸ »ç¿ë °¡´ÉÇÏ´Ù.
-*  ÀÏ¹ÝÀûÀ¸·Î °¡Àå Å« µ¥ÀÌÅÍ¿Í °¡Àå ÀÛÀº µ¥ÀÌÅÍ Â÷ÀÌ°¡ 1,000,000À» ³ÑÁö ¾ÊÀ»¶§ È¿°úÀûÀ¸·Î »ç¿ë °¡´ÉÇÏ´Ù.(°ø°£º¹Àâµµ)
-*  Áßº¹µÈ °ªÀÌ ÀÖ´Â °æ¿ìµµ indexÀÇ °ªÀ» ´Ã¸®¸é µÇ±â ¶§¹®¿¡ »ç¿ë °¡´ÉÇÏ´Ù.
+*  [Count Sort (ê³„ìˆ˜ ì •ë ¬)]
+*  íŠ¹ì •í•œ ì¡°ê±´ì—ì„œ ë°ì´í„° ê°œìˆ˜ê°€ N, ìµœëŒ“ê°’ì´ Kì¼ ë•Œ O(N+K)ë¡œ ë¹„êµì  ìž‘ì€ ì‹œê°„ë³µìž¡ë„ë¥¼ ë³´ìž¥í•œë‹¤.
+*  "ë°ì´í„°ì˜ í¬ê¸° ë²”ìœ„ê°€ ì œí•œë˜ì–´ ì •ìˆ˜ í˜•íƒœë¡œ í‘œí˜„í•  ìˆ˜ ìžˆì„ ë•Œ"ë§Œ ì‚¬ìš© ê°€ëŠ¥í•˜ë‹¤.
+*  ì¼ë°˜ì ìœ¼ë¡œ ê°€ìž¥ í° ë°ì´í„°ì™€ ê°€ìž¥ ìž‘ì€ ë°ì´í„° ì°¨ì´ê°€ 1,000,000ì„ ë„˜ì§€ ì•Šì„ë•Œ íš¨ê³¼ì ìœ¼ë¡œ ì‚¬ìš© ê°€ëŠ¥í•˜ë‹¤.(ê³µê°„ë³µìž¡ë„)
+*  ì¤‘ë³µëœ ê°’ì´ ìžˆëŠ” ê²½ìš°ë„ indexì˜ ê°’ì„ ëŠ˜ë¦¬ë©´ ë˜ê¸° ë•Œë¬¸ì— ì‚¬ìš© ê°€ëŠ¥í•˜ë‹¤.
 */
 
 #include <iostream>
@@ -27,7 +27,7 @@ int main(void)
 	for (int i = 0; i < N; i++)
 	{
 		scanf("%d", &num);
-		numbers[4000 + num]++; // -4000ºÎÅÍ 4000À» index 0ºÎÅÍ 8000¿¡ ÀúÀå
+		numbers[4000 + num]++; // -4000ë¶€í„° 4000ì„ index 0ë¶€í„° 8000ì— ì €ìž¥
 	}
 
 	double sum = 0;
@@ -44,7 +44,7 @@ int main(void)
 	int biggestNum;
 	int range;
 
-	// »ê¼úÆò±Õ, ÃÖºó°ª
+	// ì‚°ìˆ í‰ê· , ìµœë¹ˆê°’
 	for (int i = 0; i < 8001; i++)
 	{
 		sum += (numbers[i] * (i-4000));
@@ -68,18 +68,18 @@ int main(void)
 	else
 		mode = modes[1];
 
-	// Áß¾Ó°ª
+	// ì¤‘ì•™ê°’
 	for (int i = 0; i < 8001; i++)
 	{
 		middleIdx += numbers[i];
-		if (middleIdx > N / 2) // ex. 11°³ ¿ø¼ÒÀÇ Áß¾Ó°ª index =  [11/2] + 1 = 6¹øÂ° index
+		if (middleIdx > N / 2) // ex. 11ê°œ ì›ì†Œì˜ ì¤‘ì•™ê°’ index =  [11/2] + 1 = 6ë²ˆì§¸ index
 		{	
 			middleNum = i-4000;
 			break;
 		}
 	}
 
-	// ¹üÀ§
+	// ë²”ìœ„
 	for (int i = 0; i < 8001; i++)
 	{
 		if (numbers[i] > 0)
